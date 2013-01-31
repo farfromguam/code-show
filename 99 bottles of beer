@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>99 bottles of beer</title>
+</head>
+
+<body>
+
+<script>
+
+for (var i=99; i>=0; i--) {
+if(i>2) {
+document.write(i + " bottles of beer on the wall, " + i + " bottles of beer. Take one down, pass it around, " + (i-1) + " bottles of beer. <br>");
+} else if (i===2) {
+document.write(i + " bottles of beer on the wall, " + i + " bottles of beer. Take one down, pass it around, " + (i-1) + " bottle of beer. <br>");
+} else if (i===1) {
+document.write(i + " bottle of beer on the wall, " + i + " bottle of beer. Take one down, pass it around, no more beer on the wall. <br>");
+} else {
+	document.write("now we are wasted. no more beer on the wall");
+}
+}
+
+</script>
+</body>
+</html>

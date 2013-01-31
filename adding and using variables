@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hipster test</title>
+
+<script>
+window.alert ("you will be tested");
+var name=prompt ("what is your name?", " ");
+var pants=confirm("do you wear skinny pants?");
+var coff=confirm("do you drink coffee?");
+var hair=confirm("do you have pretty hair?");
+
+</script>
+
+
+</head>
+
+<body>
+
+<script>
+
+document.write(name + " you ");
+
+if (pants === true && coff === true && hair === true) {	
+	document.write("are for sure a hipster")
+} else if (pants === true || coff === true || hair === true) {
+	document.write("might be hipster")
+} else {
+	document.write("are not a hipster")
+	};
+
+</script>
+</body>
+</html>
