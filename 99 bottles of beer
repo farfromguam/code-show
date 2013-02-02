@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>99 bottles of beer</title>
+<title>AVG GRADES</title>
 </head>
-
 <body>
+<p> average grade calculator</p>
 
 <script>
 
@@ -20,6 +20,8 @@ document.write(i + " bottle of beer on the wall, " + i + " bottle of beer. Take 
 	document.write("now we are wasted. no more beer on the wall");
 }
 }
+
+
 
 </script>
 </body>
