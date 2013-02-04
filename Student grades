@@ -3,64 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <title>AVG GRADES</title>
+<script>
+
+function avgMeBro(x, y) {
+	return (x / y);
+}
+
+function letterMeBro(daGrade) {
+switch(true) {
+	case (daGrade >= 90):
+		return "A";
+		break;
+	case (daGrade >= 80):
+		return "B";
+		break;
+	case (daGrade >= 70):
+		return "C";
+		break;
+	case(daGrade >= 60):
+		return "D";
+		break;
+	default:
+		return "F";
+}};
+
+</script>
 </head>
 <body>
 <h1> average grade calculator</h1>
 
 <script>
 
-var studentGrades
-var numStudents
-var sumGrade
-var avgGrade
-
-studentGrades = [
+var studentGrades = [
 	["student 0", "Zoe", 93, true],
 	["student 1", "Pat", 74, true],
-	["student 2", "Mat", 56, false],
-	["student 3", "Hil", 23, false],
+	["student 2", "Mat", 96, false],
+	["student 3", "Hil", 63, false],
 	["student 4", "Lee", 97, true],
-	["student 5", "Ann", 48, false],
+	["student 5", "Ann", 71, false],
 	["student 6", "Sue", 79, true],
-	["student 7", "Joe", 48, false],
-	["student 8", "Ted", 46, false],
+	["student 7", "Joe", 88, false],
+	["student 8", "Ted", 86, false],
 	["student 9", "Bob", 67, true]
 	];
 
-document.write("<p><i>Data from 2d array:<br />")
-for (var i = 0; i<studentGrades.length; i++) {
-	document.write(studentGrades[i] + "<br />");
-};
-document.write("</i></p>")
-
-numStudents = studentGrades.length;
-
-sumGrade = 0
+var sumGrade = 0
 for (var n = 0; n<studentGrades.length; n++) {
 	sumGrade = sumGrade + studentGrades[n][2];
 };
 
-// document.write(sumGrade + "<br />")
+var avgGrade = avgMeBro(sumGrade, studentGrades.length);
 
-avgGrade = (sumGrade / numStudents);
-document.write("Average grade: " + avgGrade + "<br />");
+/*document.write("<p><i>Data from 2d array:<br />")
+for (var i = 0; i<studentGrades.length; i++) {
+	document.write(studentGrades[i] + "<br />");
+};
+document.write("</i></p>");*/
 
-switch(true) {
-	case (avgGrade >= 90):
-		document.write("Number grade: A <br/>");
-		break;
-	case (avgGrade >= 80):
-		document.write("Number grade: B <br/>");
-		break;
-	case (avgGrade >= 70):
-		document.write("Number grade: C <br/>");
-		break;
-	case(avgGrade >= 60):
-		document.write("Number grade: D <br/>");
-		break;
-	default:
-		document.write("Failing <br />");
-}
+//document.write(sumGrade + "<br />")
+
+document.write("Average is: " + avgGrade + "<br />");
+document.write("The average grade is: " + letterMeBro(avgGrade)); 
 
 </script>
 </body>
