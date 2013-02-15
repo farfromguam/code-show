@@ -1,0 +1,207 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+<style>
+.box {
+	background: rgba(0,0,0,0.2);
+	margin-top: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+body {
+  padding-top: 60px;
+}
+.more-tall {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+</style>
+
+
+<script>
+    $(function(){
+      $('#example').popover();
+    });
+</script>
+
+
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Project name</a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+         <ul class="nav">
+           <li class="active"><a href="#">Home</a></li>
+           <li><a href="#">Link</a></li>
+           <li><a href="#">Link</a></li>
+             
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">MySQL</a></li>
+                <li class="divider"></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">HTML5</a></li>
+               </ul>
+            </li>
+        </ul>
+
+          <form class="navbar-search pull-right">
+            <input type="text" class="search-query" placeholder="Search">
+          </form>
+
+      </div>
+ 
+    </div>
+  </div></div>
+
+<div class="container">
+
+<div class="row">
+<!-- hero-->
+<div class="span12">
+<div class="hero-unit">
+
+  <div class="row-fluid">
+    <div class="span6">
+      <h1>Heading</h1>
+      <p>I never spend much time in school but I taught ladies plenty. It's true I hire my body out for pay, hey hey. I've gotten burned over Cheryl Tiegs, blown up for Raquel Welch. But when I end up in the hay it's only hay, hey hey. I might jump an open drawbridge, or Tarzan from a vine. 'Cause I'm the unknown stuntman that makes Eastwood look so fine.</p>
+      <a class="btn btn-primary btn-large">Learn more</a>
+    </div>     
+    <div class="span6">
+        <div id="myCarousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item"><img src="img/bootstrap-mdo-sfmoma-01.jpeg"></div>
+            <div class="item"><img src="img/bootstrap-mdo-sfmoma-02.jpeg"></div>
+            <div class="item"><img src="img/bootstrap-mdo-sfmoma-03.jpeg"></div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div class="row">
+  <!-- alert-->
+  <div class="span12">
+    <div class="alert alert-info">
+    <strong>Hey Man</strong> Best check yo self, you're looking too good.
+</div>
+  </div>
+</div>
+
+<div class="row">
+<!-- what we do / sidebar-->
+  <div class="span9">
+   <h2>This is what we do</h2>
+   <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world. Just the good ol' boys, never meanin' no harm. Beats all you've ever saw, been in trouble with the law since the day they was born. Straight'nin' the curve, flat'nin' the hills. Someday the mountain might get 'em, but the law never will. Makin' their way, the only way they know how, that's just a little bit more than the law will allow. Just good ol' boys, wouldn't change if they could, fightin' the system like a true modern day Robin Hood.</p>
+
+         <!-- Button to trigger modal -->
+      <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+       
+      <!-- Modal -->
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+          <h3 id="myModalLabel">Modal header</h3>
+        </div>
+        <div class="modal-body">
+          <p>One fine body</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+          <button class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+
+  </div>
+  <div class="span3">
+   <h3>Sidebar</h3>
+   <p>Top Cat! The most effectual Top Cat! Who's intellectual close friends get to call him T.C., providing it's with dignity. Top Cat! The indisputable leader of the gang. He's the boss, he's a pip, he's the championship. He's the most tip top.</p>
+  
+  <a id="example" class="btn btn-success" rel="popover" data-content="It's so simple to create a tooltop for my website!" data-original-title="Twitter Bootstrap Popover">Popover!</a>
+
+  </div>
+  <div class="span3">
+  </div>
+</div>
+
+<div class="row more-tall">
+<!-- who/what/how-->
+  <div class="span4">
+    <h4> who we are</h4>
+    <p>Children of the sun, see your time has just begun, searching for your ways, through adventures every day. Every day and night, with the condor in flight, with all your friends in tow, you search for the Cities of Gold. Ah-ah-ah-ah-ah... wishing for The Cities of Gold. Ah-ah-ah-ah-ah... some day we will find The Cities of Gold. Do-do-do-do ah-ah-ah, do-do-do-do, Cities of Gold. Do-do-do-do, Cities of Gold. Ah-ah-ah-ah-ah... some day we will find The Cities of Gold.</p>
+      <button class="btn">Read More</button>
+  </div>
+  <div class="span4">
+    <h4> What we do</h4>
+    <p>Hey there where ya goin', not exactly knowin', who says you have to call just one place home. He's goin' everywhere, B.J. McKay and his best friend Bear. He just keeps on movin', ladies keep improvin', every day is better than the last. New dreams and better scenes, and best of all I don't pay property tax. Rollin' down to Dallas, who's providin' my palace, off to New Orleans or who knows where. Places new and ladies, too, I'm B.J. McKay and this is my best friend Bear.</p>
+    <button class="btn">Read More</button>
+  </div>
+  <div class="span4">
+    <h4> How we work</h4>
+    <p>Ten years ago a crack commando unit was sent to prison by a military court for a crime they didn't commit. These men promptly escaped from a maximum security stockade to the Los Angeles underground. Today, still wanted by the government, they survive as soldiers of fortune. If you have a problem and no one else can help, and if you can find them, maybe you can hire the A-team.</p>
+    <button class="btn">Read More</button>
+  </div>
+</div>
+
+<div class="row ">
+<!-- footer -->
+  <div class="span12 box">
+    <h4>Sign up for our newsletter</h4>
+      <form class="form-inline">  
+         <div class="input-prepend">
+          <label class="control-label" for="inputIcon">Email address | </label> 
+          <span class="add-on"><i class="icon-envelope"></i></span>
+          <input class="span2" id="prependedInput" type="text" placeholder="">
+        </div>
+      </form>
+  </div>
+</div>
+
+</div> <!-- end container -->
+
+
+
+</body>
+</html>

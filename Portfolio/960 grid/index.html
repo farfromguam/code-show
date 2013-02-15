@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Untitled Document</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/960_16_col.css" rel="stylesheet" type="text/css" />
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/text.css" rel="stylesheet" type="text/css" />
+		<script src="_js/jquery-1.7.2.min.js"></script>
+		
+<script>
+$(document).ready(function() {
+  $('.more').hide(); 
+  $('#main h2').toggle(
+    function() {
+     $(this).next('.more').fadeIn();
+     $(this).addClass('close');
+    },
+    function() {
+      $(this).next('.more').fadeOut();
+      $(this).removeClass('close');
+    }); //end of toggle more info fumction
+	
+ 	// Replace all SVG images with inline SVG :: Magic code from :: http://labs.funkhausdesign.com/examples/img-svg/img-to-svg.html
+	jQuery('img.svg').each(function(){
+		var $img = jQuery(this);
+		var imgID = $img.attr('id');
+		var imgClass = $img.attr('class');
+		var imgURL = $img.attr('src');
+		jQuery.get(imgURL, function(data) {
+			// Get the SVG tag, ignore the rest
+			var $svg = jQuery(data).find('svg');
+			// Add replaced image's ID to the new SVG
+			if(typeof imgID !== 'undefined') {
+				$svg = $svg.attr('id', imgID);
+			}
+			// Add replaced image's classes to the new SVG
+			if(typeof imgClass !== 'undefined') {
+				$svg = $svg.attr('class', imgClass+' replaced-svg');
+			}
+			// Remove any invalid XML tags as per http://validator.w3.org
+			$svg = $svg.removeAttr('xmlns:a');
+			// Replace image with new SVG
+			$img.replaceWith($svg);
+		});
+	}); //end inline svg function
+}); //end document ready
+
+function changeSvg() {
+var perfColor = document.getElementById("svgColor").value;
+if (perfColor !== "") {
+  allSvg = document.getElementsByClassName('svg')
+    for(var i=0; i<allSvg.length; i++) {
+       allSvg[i].style.fill=perfColor;
+	}
+  allCustom = document.getElementsByClassName('custom')
+  	for(var i=0; i<allCustom.length; i++) {
+	  allCustom[i].style.color=perfColor;	
+	}
+} else {
+alert("choose a color friend");
+alert("I'm not your friend buddy");
+alert("I'm not your buddy pal");
+alert("I'm not your pal guy");
+alert("I'm not your guy friend");
+}
+} // end changeSvg
+	
+function randomImg() {
+var images = [],
+index = 0;
+images[0] = '<img class="svg" src="images/guam.svg">';
+images[1] = '<img class="svg" src="images/bike.svg">';
+images[2] = '<img class="svg" src="images/walrus.svg">';
+images[3] = '<img class="svg" src="images/cat.svg">';
+images[4] = '<img class="svg" src="images/skull.svg">';
+images[5] = '<img class="svg" src="images/tank.svg">';
+images[6] = '<img class="svg" src="images/cube.svg">';
+images[7] = '<img class="svg" src="images/graph.svg">';
+images[8] = '<img class="svg" src="images/tire.svg">';
+index = Math.floor(Math.random() * images.length);
+document.write(images[index]);
+} // end randomImg
+</script>
+		
+		</head>
+		
+        <div id="wrapper" class="container_16">
+          <div id="header" class="grid_16">
+            <div id="banner" class="grid_11 alpha">
+              <h1 class="custom">Kick-ass Banner here</h1>
+              <h3 class="custom">with a subtitle thats not too boring</h3>
+            </div>
+            <div id="banner-image" class="grid_5 omega">
+			  <script type="text/javascript">
+				 randomImg();
+			  </script> 
+            </div>
+          </div>
+          <div id="leftbar" class="grid_2">
+            <p>Enter a new color to look at</p>
+            <form>
+              <input name="" type="text" id="svgColor" value="#99CC00" size="10"/>
+              <input name="change" type="button"  value="Change" onClick="changeSvg()"/>
+            </form>
+          </div>
+          <div id="main" class="grid_9">
+            <div class="grid_3 alpha">
+              <p>There will be volumes telling my story //</p>
+            </div>
+            <div class="grid_3">
+              <p>My 
+                Creations //</p>
+            </div>
+            <div class="grid_3 omega">
+              <p>More Serious Stuff //</p>
+            </div>
+            <div class="grid_9 alpha">
+              <div id= "main">
+                <h2 class="custom">About</h2>
+                <div class="more">
+                  <p>I am a graphic designer with the belief that all design should support rather than distract from the message. The pieces that I create are purposefully designed to solve specific problems. I believe that design should come from teamwork to achieve the highest quality product possible, rather than one person alone in front of a computer. I have a strong knowledge of the psychological aspects of visual communication and use this as a tool to solve problems. Working as a part of your team, I feel that I can become a valued asset to you and your company.</p>
+                </div>
+                <h2 class="custom"> Experience</h2>
+                <div class="more">
+                  <h3> CREATIVE DIRECTOR, 
+                    FIRST BAPTIST CHURCH MILLINGTON,TN 2006-2010</h3>
+                  <p> As the Graphic Designer / Creative Director I was charged with determining the best ways to visually represent the Church's identity. I Developed every aspect of multiple campaigns or projects based on the ministry plan and needs. I deployed them on the web, printed products in house, and offsite.
+                    Responsibilities </p>
+                  <ul>
+                    <li>Led creative sessions for project kick-offs </li>
+                    <li>Developed creative programs and designed concepts that met the church's objectives and that advanced its identity </li>
+                    <li>Worked with multiple people to develop concepts for a campaign or project </li>
+                    <li>Pitched concepts to individuals, groups, or congregation </li>
+                    <li>Managed all projects and provided quality control from concept to completion </li>
+                  </ul>
+                  <h3>INTERN DESIGNER, COMP CAMS, </h3>
+                  <p>MEMPHIS, TN SPRING 2008
+                    Developed material that supported multiple brands, following visual guidelines and worked across multiple media including print, web, and video. </p>
+                </div>
+                <h2 class="custom">Education </h2>
+                <div class="more">
+                  <h3>University of Memphis - BFA Graphic Design, 2010</h3>
+                  <p> Skills
+                    Knowledge of layouts, graphic fundamentals, typography and limitations of applied media </p>
+                  <p>A strong working knowledge of design, brand development, and creative process 
+                    Ability to work with diverse personalities 
+                    Ability to lead projects from concept to completion to fulfillment
+                    Proficient with InDesign, Illustrator, Photoshop, Dreamweaver, and Fireworks 
+                    A strong working knowledge of HTML, CSS, PHP 
+                    Ability to make evaluative judgments 
+                    Ability to communicate effectively, both orally and in writing
+                    Ability to work quickly to turn around project in limited timeframes
+                    Referrals
+                    Available upon request </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="rightbar" class="grid_5">
+            <p>Christopher Fryman<br />
+              615.669.5606<br />
+              farfromguam@gmail.com<br />
+              Based out of Nashville TN </p>
+            <p><a href="https://plus.google.com/113093822843766817917"><img class="svg" src="images/google.svg"></a> 
+            <a href="http://twitter.com/farfromguam"><img class="svg" src="images/twitter.svg"></a> <br />
+            <a href="https://www.facebook.com/chris.fryman"><img class="svg" src="images/facebook.svg"></a>
+            <a href="http://86bicycles.blogspot.com/"><img class="svg" src="images/blogger.svg"></a> <br />
+            <a href="https://github.com/farfromguam"><img class="svg" src="images/github.svg"></a> 
+            <a href="www.linkedin.com"><img class="svg" src="images/dropbox.svg"></a> <br />
+            <a href="http://www.linkedin.com/pub/christopher-fryman/17/888/4b2"><img class="svg" src="images/linkedin.svg"></a> </p>
+          </div>
+          <div id="footer" class="grid_16">
+            <p>Little type in the footer :: 2013 :: I'm not crazy I have papers to prove it</p>
+          </div>
+        </div>
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script src="_js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">  
+jQuery(document).ready(function() {
+	/*
+	 * Replace all SVG images with inline SVG
+	 * Magic code from	 
+	 * http://labs.funkhausdesign.com/examples/img-svg/img-to-svg.html
+	 */
+		jQuery('img.svg').each(function(){
+			var $img = jQuery(this);
+			var imgID = $img.attr('id');
+			var imgClass = $img.attr('class');
+			var imgURL = $img.attr('src');
+	
+			jQuery.get(imgURL, function(data) {
+				// Get the SVG tag, ignore the rest
+				var $svg = jQuery(data).find('svg');
+	
+				// Add replaced image's ID to the new SVG
+				if(typeof imgID !== 'undefined') {
+					$svg = $svg.attr('id', imgID);
+				}
+				// Add replaced image's classes to the new SVG
+				if(typeof imgClass !== 'undefined') {
+					$svg = $svg.attr('class', imgClass+' replaced-svg');
+				}
+				
+				// Remove any invalid XML tags as per http://validator.w3.org
+				$svg = $svg.removeAttr('xmlns:a');
+				
+				// Replace image with new SVG
+				$img.replaceWith($svg);
+			});
+
+		});
+});
+</script>
+<script>
+
+function changeSvg() {
+var perfColor = document.getElementById("svgColor").value;
+if (perfColor !== "") {
+  allSvg = document.getElementsByClassName('svg')
+    for(var i=0; i<allSvg.length; i++) {
+       allSvg[i].style.fill=perfColor;
+	}
+  allCustom = document.getElementsByClassName('custom')
+  	for(var i=0; i<allCustom.length; i++) {
+	  allCustom[i].style.color=perfColor;	
+	}
+  //alert("you choose " + perfColor);
+} else {
+alert("choose a color friend");
+alert("I'm not your friend buddy");
+alert("I'm not your buddy pal");
+alert("I'm not your pal guy");
+alert("I'm not your guy friend");
+}
+}
+
+</script>
+</head>
+<body>
+<p>Enter color to look at</p>
+<form>
+  <input id="svgColor" type="text" size="10"/>
+  <input name="change" type="button"  value="Change" onClick="changeSvg()"/>
+</form>
+<br>
+
+<p> images with a class of svg</p>
+<img class="svg" src="images/bike.svg"> <img class="svg" src="images/guam.svg"> <img class="svg" src="images/walrus.svg"><br />
+<p>text with a class of custom</p>
+<h1 class="custom"> This is H1 </h1>
+<h3 class="custom"> this is a h3 </h3>
+<p class="custom"> this is a paragraph <p>
+
+<p>social sites</p>
+<img class="svg" src="images/google.svg">
+<img class="svg" src="images/twitter.svg">
+<img class="svg" src="images/facebook.svg">
+<img class="svg" src="images/blogger.svg">
+<img class="svg" src="images/github.svg">
+<img class="svg" src="images/dropbox.svg">
+<img class="svg" src="images/linkedin.svg">
+
+
+</body>
+</html>

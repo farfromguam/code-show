@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Pizza</title>
+    <script type="text/javascript">
+    // Gathers which toppings were requsted by a user
+    function prepPizza()
+    {
+        var toppings = document.getElementsByName('toppingcheck');
+        var requestedToppings = new Array();
+
+        for (var i = toppings.length - 1; i >= 0; i--) 
+        {
+            if (toppings[i].checked) 
+            {
+                requestedToppings.push(toppings[i].value)                
+            }
+        }
+            
+        updateToppings(requestedToppings);
+    }
+
+    // Takes an array of toppings to update the page.
+    function updateToppings(toppings) 
+    {
+        var finalForm = document.createElement('p');
+        finalForm.appendChild(document.createTextNode('This pizza will have: ' + toppings.join(', ')))
+        
+        var webpage = document.getElementById('div2');
+        webpage.appendChild(finalForm);
+    }
+    </script>
+</head>
+<body>
+<form id="pizzaform" action="#">
+<p>Toppings:</p>
+<input type="checkbox" id="topping1" value="Sausage" 
+    name="toppingcheck">Sausage<br>
+<input type="checkbox" id="topping2" value="Pepperoni" 
+    name="toppingcheck">Pepperoni<br>
+<input type="checkbox" id="topping3" value="Ham" 
+    name="toppingcheck">Ham<br>
+<input type="checkbox" id="topping4" value="Green Peppers" 
+    name="toppingcheck">Green Peppers<br>
+<input type="checkbox" id="topping5" value="Mushrooms" 
+    name="toppingcheck">Mushrooms<br>
+<input type="checkbox" id="topping6" value="Onions" 
+    name="toppingcheck">Onions<br>
+<input type="checkbox" id="topping7" value="Pineapple" 
+    name="toppingcheck">Pineapple<br>
+<input type="checkbox" id="topping8" value="Sardines" 
+    name="toppingcheck">Sardines<br>
+
+<p><input type="button" id="prepBtn" name="prepBtn" value="Prep Pizza" 
+    onClick="prepPizza()"></p>
+
+<div id='div2'>
+</div>
+
+
+</form>
+</body>
+</html>
