@@ -3,29 +3,22 @@
 <html>
 <head>
     <title>Pizza</title>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
     <script type="text/javascript">
-    function prepza() {
-        var checkboxes = document.forms["pizzaform"].toppingcheck.length;
-        var newelement = document.createElement("p");
-        document.body.appendChild(newelement);
-        newelement.appendChild(document.createTextNode("This pizza will have:"));
 
-        for (var i = 0; i < checkboxes; i++) {
-            if (document.forms["pizzaform"].toppingcheck[i].checked) {
-                  var newelement = document.createElement("p");
-                  document.body.appendChild(newelement);
-                  newelement.appendChild(document.createTextNode(document.forms["pizzaform"].toppingcheck[i].value));
-            }
+function prepza() {
+    var toppers = $('input:checkbox:checked.topping').map(function () {
+        return this.value;
+        }) .get().join(", ");
+    var crust = $("#pizzaform input:radio:checked.crust").val();    
+        if (toppers !== "") {
+            $('#summary').empty().append('<p>You will have a ' + crust + ' pizza <br> with: ' + toppers);
+        } else {
+            $('#summary').empty().append('<p>You will have a ' + crust + ' pizza <br> with nothing on it, just crust.<br>Really all we are giving you is bread.');
         }
-
-        set a variable crusttype equal to the radio buttons
-        set a variable crustlength equal to the number of radio buttons (do not just put "3")
-        loop through the radio inputs
-            if the radio button is checked
-                append a paragraph with the value of the checked radio button + "Crust" ( using .createElement, .appendChild, and .createTextNode)
-            else
-                do nothing
-    }
+}
     </script>
 </head>
 <body>
@@ -33,39 +26,44 @@
 <table>
 <tr><td>Toppings</td><td>Crust</td></tr>
 <tr>
-<td><input type="checkbox" id="topping1" value="Sausage" 
+<td><input class="topping" type="checkbox" id="topping1" value="Cheese" 
+name="toppingcheck" checked="checked">Cheese</td>
+<td><input class="crust" type="radio" name="crust" value="Stuffed Crust" 
+checked="checked" id="radio1">Stuffed Crust</td>
+</tr>
+<td><input class="topping" type="checkbox" id="topping1" value="Sausage" 
 name="toppingcheck">Sausage</td>
-<td><input type="radio" name="crust" value="Regular" 
-checked="checked" id="radio1">Regular</td>
+<td><input class="crust" type="radio" name="crust" value="Regular" 
+ id="radio1">Regular</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping2" value="Pepperoni" 
+<td><input class="topping" type="checkbox" id="topping2" value="Pepperoni" 
 name="toppingcheck">Pepperoni</td>
-<td><input type="radio" name="crust" value="Deep Dish" 
+<td><input class="crust" type="radio" name="crust" value="Deep Dish" 
 id="radio2" />Deep Dish</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping3" value="Ham" 
+<td><input class="topping" type="checkbox" id="topping3" value="Ham" 
 name="toppingcheck">Ham</td>
-<td><input type="radio" name="crust" value="Thin" id="radio3">Thin</td>
+<td><input class="crust" type="radio" name="crust" value="Thin Crust" id="radio3">Thin Crust</td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping4" value="Green Peppers" 
+<td><input class="topping" type="checkbox" id="topping4" value="Green Peppers" 
 name="toppingcheck">Green Peppers</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping5" value="Mushrooms" 
+<td><input class="topping" type="checkbox" id="topping5" value="Mushrooms" 
 name="toppingcheck">Mushrooms</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping6" value="Onions" 
+<td><input class="topping" type="checkbox" id="topping6" value="Onions" 
 name="toppingcheck">Onions</td>
 <td></td>
 </tr>
 <tr>
-<td><input type="checkbox" id="topping7" value="Pineapple" 
+<td><input class="topping" type="checkbox" id="topping7" value="Pineapple" 
 name="toppingcheck">Pineapple</td>
 <td></td>
 </tr>
@@ -73,5 +71,8 @@ name="toppingcheck">Pineapple</td>
 
 <p><input type="button" id="prepBtn" name="prepBtn" value="Prep Pizza" onclick="prepza();"></p>
 </form>
+<div id="summary">
+</div>
+
 </body>
 </html>
