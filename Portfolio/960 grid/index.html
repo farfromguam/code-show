@@ -80,7 +80,7 @@ images[6] = '<img class="svg" src="images/cube.svg">';
 images[7] = '<img class="svg" src="images/graph.svg">';
 images[8] = '<img class="svg" src="images/tire.svg">';
 index = Math.floor(Math.random() * images.length);
-document.write(images[index]);
+return(images[index]);
 } // end randomImg
 </script>
 		
@@ -92,9 +92,9 @@ document.write(images[index]);
               <h1 class="custom">Kick-ass Banner here</h1>
               <h3 class="custom">with a subtitle thats not too boring</h3>
             </div>
-            <div id="banner-image" class="grid_5 omega">
-			  <script type="text/javascript">
-				 randomImg();
+            <div id="banner-image" class="grid_5 omega" onclick="//$('#banner-image').empty().append(randomImg())">
+			  <script>
+				 document.write(randomImg());
 			  </script> 
             </div>
           </div>
